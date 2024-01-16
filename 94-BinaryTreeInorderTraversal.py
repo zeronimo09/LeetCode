@@ -13,4 +13,23 @@ class Solution(object):
             res.append(curr.val)
             curr = curr.right
         return res
-        
+
+Java:
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+
+        while(!stack.isEmpty() || curr!=null){
+            while(curr!=null){
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            res.add(curr.val);
+            curr = curr.right;
+        }
+    return res;       
+    }
+}
