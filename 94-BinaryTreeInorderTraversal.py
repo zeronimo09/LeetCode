@@ -1,4 +1,4 @@
-Python:
+Python: Iterative Approach
 Inorder - left, root, right
 class Solution(object):
     def inorderTraversal(self, root):
@@ -13,6 +13,19 @@ class Solution(object):
             res.append(curr.val)
             curr = curr.right
         return res
+
+
+Python: Using Recursion
+class Solution(object):
+    def inorderTraversal(self, root):
+        res = []
+        def inorder(root):
+            if not root:
+                return
+            inorder(root.left)
+            res.append(root.val)
+            inorder(root.right)
+
 
 Java:
 class Solution {
@@ -33,3 +46,5 @@ class Solution {
     return res;       
     }
 }
+
+
