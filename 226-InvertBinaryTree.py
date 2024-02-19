@@ -12,6 +12,21 @@ class Solution:
         self.invertTree(root.right)
         return root 
 
+Java: Above Solution in Java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) return null;
+
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        invertTree(root.left);
+        invertTree(root.right);
+    return root;
+    }
+}
+
 Java: Using Recursion
 class Solution {
     public TreeNode invertTree(TreeNode root) {
